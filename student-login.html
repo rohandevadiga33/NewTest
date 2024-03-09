@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Login</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.container {
+  width: 400px;
+  margin: 100px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-group button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-group button:hover {
+  background-color: #0056b3;
+}
+
+.link-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.link-container a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.link-container a:hover {
+  text-decoration: underline;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Student Login</h2>
+  <form action="#">
+    <div class="form-group">
+      <label for="registrationNumber">Registration Number</label>
+      <input type="text" id="registrationNumber" name="registrationNumber" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+    <div class="form-group">
+      <button type="button" onclick="validatestudent()">Login</button>
+    </div>
+    <div class="link-container">
+      <a href="homepage.html">Back to Home Page</a>
+      <a href="#">Forgot Password?</a>
+    </div>
+  </form>
+</div>
+<script>
+  function validatestudent() {
+    var regNumber = document.getElementById("registrationNumber").value;
+    var password = document.getElementById("password").value;
+    
+    // Check if registration number and password match the credentials
+    if (regNumber === "1" && password === "123") {
+      // Redirect to the try3.html page upon successful login
+      window.location.href = "studentonly.html";
+    } else {
+      alert("Invalid credentials. Please try again.");
+    }
+  }
+</script>
+</body>
+</html>

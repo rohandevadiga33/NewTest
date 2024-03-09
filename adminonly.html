@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>College Website</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Styles for the slideshow */
+.slideshow-container {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 145px; /* Adjusted margin-top to move slideshow down */
+}
+
+.mySlides {
+  display: none;
+  width: 100vw; /* Set image width to 100% of viewport width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Position the next button */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Slideshow text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.header {
+  background-color: #007bff;
+  color: #fff;
+  padding: 20px 0; /* Adjusted padding */
+  display: flex;
+  align-items: center;
+  position: fixed; /* Changed position to absolute */
+  top: 0; /* Set to top */
+  left: 0; /* Set to left */
+  width: 100%; /* Stretch background to full width */
+}
+
+.header img {
+  height: 70px; /* Adjusted height for larger logo */
+  vertical-align: middle;
+  margin-right: 20px; /* Increased spacing between the logo and text */
+  margin-left: 20px; /* Added space before the logo */
+}
+
+.header h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+  margin-right: 10px; /* Add some spacing between the logo and text */
+}
+
+.header p {
+  margin: 5px 0 0;
+  padding: 0;
+  font-size: 18px;
+  opacity: 0.7; /* Decreased opacity */
+}
+
+.navbar {
+  background-color: #333; /* Dark background color for the navigation bar */
+  position: fixed; /* Set navbar position to fixed */
+  width: 100%; /* Set navbar width to full width */
+  top: 100px; /* Align navbar below the header */
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.navbar li {
+  float: left;
+}
+
+.navbar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar li a:hover {
+  background-color: #ddd; /* Background color on hover */
+  color: black;
+}
+
+.dropdown {
+  float: right; /* Align the dropdown to the right */
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  min-width: 160px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.navbar li a[href="homepage.html"] {
+  color: red;
+</style>
+</head>
+<body>
+
+<div class="header">
+  <img src="logo.png" alt="College Logo">
+  <div>
+    <h1>Dr TMA Pai Polytechnic</h1>
+    <p>A unit of Dr. TMA Pai Foundation, Manipal</p>
+  </div>
+</div>
+
+<div class="navbar">
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#courses">Courses</a></li>
+    <li><a href="#admission">Admission</a></li>
+    <li><a href="#result">Results</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#news">Students Section </a></li>
+    <li><a href="#news">Teachers Section </a></li>
+    <li><a href="#news">Add Notifications </a></li>
+
+    <li><a href="homepage.html">Logout</a></li>
+
+
+
+  </ul>
+</div>
+
+<div class="slideshow-container">
+  <div class="mySlides fade">
+    <img src="image1.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides fade">
+    <img src="image2.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides fade">
+    <img src="image3.jpg" style="width:100%">
+  </div>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<script>
+  var slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    slides[slideIndex-1].style.display = "block";  
+    setTimeout(showSlides,3000); // Change image every 3 seconds
+  }
+
+  // Next/previous controls
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+</script>
+<!-- Rest of the HTML content -->
+<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. At minus libero voluptates possimus hic quae dolores laborum quam, cupiditate fuga culpa laboriosam labore incidunt amet nobis delectus excepturi aliquam reprehenderit dolor asperiores animi eaque! Eveniet ex dolorem sequi expedita quas soluta voluptate aut, saepe velit sit nobis repellendus maxime illo, debitis esse laudantium excepturi impedit dolore dolorum provident obcaecati accusamus dignissimos? Beatae voluptatibus nisi vel earum? Minus fugiat tempore officiis impedit praesentium ipsam omnis placeat, similique sapiente facilis odit dicta fugit aliquam officia, quidem repellat. Perspiciatis tempore quis optio et, suscipit ratione. Impedit repellendus praesentium quasi est veritatis distinctio amet in eos sapiente, voluptates officia, atque, non laborum placeat consequatur labore. Labore corporis obcaecati aperiam cupiditate sint eius voluptates ullam. Voluptatibus nesciunt distinctio explicabo corrupti eligendi in, velit dolorum corporis expedita repudiandae officiis doloribus quos sit dolor vel molestias! Dicta, error facere vel beatae veritatis aut delectus, et omnis sint corporis porro, impedit similique quos modi iure nostrum? Pariatur saepe ratione perferendis qui, doloribus perspiciatis eaque molestias ipsa recusandae repellendus dicta corporis nisi aut iure iste aspernatur magni cum libero cumque aperiam. Quod doloribus quibusdam dolores blanditiis est commodi quidem ut aliquam sequi, repudiandae, rerum laborum aspernatur amet excepturi ad nam adipisci in incidunt fuga! Veniam debitis, autem, itaque laudantium dolorem assumenda rem nihil nemo deserunt nostrum libero rerum asperiores at sint! Autem ex ducimus amet, itaque in fugit praesentium illo culpa natus! Quae ex sint corporis, ipsam nam quibusdam tempora optio dolorum quasi minus incidunt dolor modi beatae, recusandae cupiditate totam omnis architecto itaque quo eum. Impedit consequuntur libero nisi eaque non, necessitatibus sequi natus voluptatum eligendi veniam, minus reprehenderit tempore, deserunt dicta expedita in debitis. Est perferendis cum explicabo cupiditate rerum laudantium molestiae illo accusamus ab labore, eius ut. Culpa doloribus quod dolor nisi, recusandae sed nihil ad cumque rem atque ducimus modi facilis nemo laudantium mollitia obcaecati maxime facere veniam natus ut! Voluptatem sed cumque atque, velit magni delectus eligendi dolorum sunt amet rem laudantium et libero obcaecati reiciendis inventore nulla mollitia ipsam illum laboriosam necessitatibus. Placeat fuga, dolores ullam provident, assumenda, recusandae doloribus molestiae saepe veritatis magnam est debitis temporibus. Nostrum blanditiis voluptate modi vitae voluptas eius dolores tempore fuga animi architecto obcaecati ipsam itaque est omnis ducimus ratione voluptatibus, aut suscipit labore aliquam harum! Eaque dolorem iure veritatis cumque quo, delectus, perferendis deleniti quae pariatur quis reiciendis eos sed nihil quia sapiente, id aliquam veniam possimus odio rerum rem totam ab doloremque. Eos qui repellendus saepe! Culpa, ducimus alias voluptatem autem reprehenderit eius eaque debitis iure nemo, placeat consectetur sequi consequatur? Sed similique culpa rem eveniet nemo, ipsa recusandae! Amet vero quidem iure ipsam, consequuntur maxime voluptates quibusdam deleniti numquam voluptate deserunt provident non aliquid assumenda beatae consequatur minus nam dolorem itaque ullam facere temporibus cum ut! Aliquam deserunt expedita hic eligendi totam quidem laborum natus quibusdam voluptate voluptas voluptatibus, ut consequuntur aperiam tenetur corporis possimus? Molestiae provident deleniti, quia quaerat adipisci, hic ratione animi dolorem tempore sapiente dolore quasi neque praesentium quam asperiores modi.</p>
+
+</body>
+</html>
